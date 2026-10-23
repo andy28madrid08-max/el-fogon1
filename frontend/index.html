@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Fogón — Comida Catracha | Tegucigalpa, Honduras</title>
+    <meta name="description" content="El Fogón: restaurante de comida catracha en Tegucigalpa. Baleadas, pupusas, catrachas y sopa de frijoles." />
+    <link rel="icon" href="img/logo-el-fogon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <!-- ================= ENCABEZADO / NAVEGACIÓN ================= -->
+    <header class="encabezado" id="inicio-top">
+        <div class="contenedor nav-contenido">
+            
+            <a href="#inicio-top" class="logo-caja" data-testid="logo-el-fogon">
+                <img src="img/logo-el-fogon.png" alt="Logo El Fogón" class="logo-img" />
+                <span class="logo-texto">El Fogón</span>
+            </a>
+
+            <nav class="menu-nav" id="menu-nav">
+                <a href="#inicio-top" data-testid="nav-inicio">Inicio</a>
+                <a href="#comidas" data-testid="nav-comidas">Comidas</a>
+                <a href="#promociones" data-testid="nav-promociones">Promociones</a>
+                <a href="#ubicacion" data-testid="nav-ubicacion">Ubicación</a>
+                <a href="#redes" data-testid="nav-redes">Redes Sociales</a>
+                <a href="login.html" class="btn-login" data-testid="nav-login">Ingresar</a>
+            </nav>
+
+            <button class="menu-hamburguesa" id="btn-hamburguesa" data-testid="btn-menu-movil" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= PORTADA / INICIO ================= -->
+    <section class="portada" id="inicio">
+        <div class="portada-overlay"></div>
+        <div class="contenedor portada-contenido">
+            <span class="portada-badge" id="estado-restaurante" data-testid="estado-restaurante">Consultando horario…</span>
+            <h1 class="portada-titulo">El Fogón</h1>
+            <p class="portada-sub">Auténtica comida catracha hecha en casa 🇭🇳<br />Baleadas, pupusas, catrachas y la mejor sopa de frijoles de Tegucigalpa.</p>
+            <div class="portada-botones">
+                <a href="#comidas" class="btn btn-primario" data-testid="btn-ver-menu">Ver el menú</a>
+                <a href="#reservas" class="btn btn-contorno" data-testid="btn-reservar">Reservar mesa</a>
+            </div>
+            <p class="portada-horario" id="portada-hora"></p>
+        </div>
+    </section>
+
+    <!-- ================= PLATOS DE LA CASA (4 tarjetas) ================= -->
+    <section class="seccion" id="platos-casa">
+        <div class="contenedor">
+            <p class="seccion-kicker">Lo más pedido</p>
+            <h2 class="seccion-titulo">Platos de la casa</h2>
+            <div class="grid-casa" id="grid-destacados" data-testid="grid-destacados"></div>
+        </div>
+    </section>
+
+    <!-- ================= COMIDAS / MENÚ (16 platos con filtros) ================= -->
+    <section class="seccion seccion-crema" id="comidas">
+        <div class="contenedor">
+            <p class="seccion-kicker">Nuestro menú</p>
+            <h2 class="seccion-titulo">Comidas</h2>
+            <p class="seccion-texto">Toca cualquier platillo para ver sus variedades y precios en lempiras.</p>
+
+            <div class="filtros" id="filtros-menu" data-testid="filtros-menu">
+                <button class="chip chip-activo" data-slug="" data-testid="filtro-todos">Todos</button>
+            </div>
+
+            <div class="grid-menu" id="grid-menu" data-testid="grid-menu"></div>
+        </div>
+    </section>
+
+    <!-- ================= PROMOCIONES ================= -->
+    <section class="seccion" id="promociones">
+        <div class="contenedor">
+            <p class="seccion-kicker">Ofertas calientitas</p>
+            <h2 class="seccion-titulo">Promociones</h2>
+            <div class="grid-promos" id="grid-promos" data-testid="grid-promos"></div>
+        </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section class="seccion seccion-oscura" id="nosotros">
+        <div class="contenedor grid-nosotros">
+            <div class="nosotros-texto">
+                <p class="seccion-kicker naranja">Nosotros</p>
+                <h2 class="seccion-titulo blanco">¿Por qué "catracho"?</h2>
+                <p>La palabra <strong>"catracho"</strong> nació en 1856, cuando los soldados hondureños del general <strong>Florencio Xatruch</strong> ayudaron a vencer a los filibusteros en Nicaragua. A los soldados les decían "los xatruches", y de tanto repetirlo terminó sonando como <strong>"catrachos"</strong>. Desde entonces, así nos llamamos con orgullo los hondureños.</p>
+                <p>En <strong>El Fogón</strong> cocinamos con los ingredientes de siempre: maíz y harina para las tortillas, frijoles rojos molidos, quesillo, mantequilla crema, chismol fresco, loroco y café de altura. Todo hecho al momento, como en casa de la abuela.</p>
+            </div>
+            <div class="nosotros-img">
+                <img src="img/restaurante.jpg" alt="Interior del restaurante El Fogón" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RESERVAS ================= -->
+    <section class="seccion seccion-crema" id="reservas">
+        <div class="contenedor grid-reservas">
+            <div>
+                <p class="seccion-kicker">Aparta tu lugar</p>
+                <h2 class="seccion-titulo">Reservas</h2>
+                <p class="seccion-texto">Llena el formulario y te armamos el resumen de tu reserva al instante.</p>
+                <form id="form-reserva" class="form-reserva" data-testid="form-reserva">
+                    <div class="campo">
+                        <label>Nombre completo</label>
+                        <input type="text" name="nombre" required data-testid="reserva-nombre" placeholder="Ej: Andy Madrid" />
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono" required data-testid="reserva-telefono" placeholder="Ej: 9876-5432" />
+                    </div>
+                    <div class="fila-2">
+                        <div class="campo">
+                            <label>Personas</label>
+                            <input type="number" name="personas" min="1" value="2" required data-testid="reserva-personas" />
+                        </div>
+                        <div class="campo">
+                            <label>Fecha</label>
+                            <input type="date" name="fecha" required data-testid="reserva-fecha" />
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label>Hora</label>
+                        <input type="time" name="hora" required data-testid="reserva-hora" />
+                    </div>
+                    <div class="campo">
+                        <label>Notas (opcional)</label>
+                        <textarea name="notas" rows="2" data-testid="reserva-notas" placeholder="Celebramos un cumpleaños…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primario" data-testid="btn-enviar-reserva">Confirmar reserva</button>
+                </form>
+            </div>
+            <aside class="resumen-reserva" id="resumen-reserva" data-testid="resumen-reserva">
+                <h3>Resumen de tu reserva</h3>
+                <p class="resumen-vacio" id="resumen-vacio">Completa el formulario y aquí verás el resumen.</p>
+                <ul id="resumen-lista" class="resumen-lista oculto"></ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ================= UBICACIÓN ================= -->
+    <section class="seccion" id="ubicacion">
+        <div class="contenedor">
+            <p class="seccion-kicker">¿Dónde estamos?</p>
+            <h2 class="seccion-titulo">Ubicación</h2>
+            <div class="grid-ubicacion">
+                <div class="ubicacion-info">
+                    <p class="ubicacion-ciudad">📍 Tegucigalpa, Francisco Morazán</p>
+                    <p>Colonia Palmira, Avenida República de Chile,<br />frente al Parque Naciones Unidas (El Picacho).<br />Tegucigalpa M.D.C., Honduras.</p>
+                    <div class="contacto-botones">
+                        <button class="btn btn-contorno" id="btn-copiar-tel" data-testid="btn-copiar-telefono">📞 Copiar teléfono: +504 2234-5678</button>
+                        <button class="btn btn-contorno" id="btn-copiar-correo" data-testid="btn-copiar-correo">✉️ Copiar correo: hola@elfogon.hn</button>
+                    </div>
+                    <div class="horario-caja">
+                        <h4>Horario</h4>
+                        <p>Lunes a Domingo: 10:00 am – 10:00 pm</p>
+                        <p id="estado-ubicacion" class="estado-chip"></p>
+                    </div>
+                </div>
+                <div class="ubicacion-mapa">
+                    <iframe
+                        title="Mapa El Fogón Tegucigalpa"
+                        src="https://www.google.com/maps?q=Parque%20Naciones%20Unidas%20El%20Picacho%20Tegucigalpa&output=embed"
+                        loading="lazy"
+                        data-testid="mapa-ubicacion"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= REDES SOCIALES ================= -->
+    <section class="seccion seccion-naranja" id="redes">
+        <div class="contenedor centrado">
+            <p class="seccion-kicker blanco">Síguenos</p>
+            <h2 class="seccion-titulo blanco">Redes Sociales</h2>
+            <p class="seccion-texto blanco">Mirá nuestras promos y antojos del día en nuestras redes.</p>
+            <div class="redes-iconos">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" class="red-item" data-testid="red-instagram">
+                    <img src="img/instagram.svg" alt="Instagram" /><span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="red-item" data-testid="red-tiktok">
+                    <img src="img/tiktok.svg" alt="TikTok" /><span>TikTok</span>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" class="red-item" data-testid="red-facebook">
+                    <img src="img/facebook.svg" alt="Facebook" /><span>Facebook</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PIE DE PÁGINA ================= -->
+    <footer class="pie">
+        <div class="contenedor grid-pie">
+            <div>
+                <div class="logo-caja">
+                    <img src="img/logo-el-fogon.png" alt="Logo El Fogón" class="logo-img" />
+                    <span class="logo-texto blanco">El Fogón</span>
+                </div>
+                <p class="pie-texto">Comida catracha hecha con cariño en Tegucigalpa, Honduras.</p>
+            </div>
+            <div>
+                <h4>Menú</h4>
+                <a href="#comidas">Comidas</a>
+                <a href="#promociones">Promociones</a>
+                <a href="#reservas">Reservas</a>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>Tegucigalpa, Francisco Morazán</p>
+                <p>+504 2234-5678</p>
+                <p>hola@elfogon.hn</p>
+            </div>
+        </div>
+        <p class="pie-copy">© 2026 El Fogón · Proyecto escolar de Informática.</p>
+    </footer>
+
+    <!-- ================= MODAL DE VARIEDADES ================= -->
+    <div class="modal-fondo oculto" id="modal-plato" data-testid="modal-plato">
+        <div class="modal-caja">
+            <button class="modal-cerrar" id="modal-cerrar" data-testid="btn-cerrar-modal">✕</button>
+            <img id="modal-img" src="" alt="" class="modal-img" />
+            <h3 id="modal-nombre"></h3>
+            <p id="modal-desc" class="modal-desc"></p>
+            <h4 class="modal-sub">Variedades disponibles</h4>
+            <ul id="modal-variedades" class="modal-variedades"></ul>
+        </div>
+    </div>
+
+    <!-- Aviso flotante (toast) -->
+    <div class="toast oculto" id="toast" data-testid="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

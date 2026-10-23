@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel — El Fogón</title>
+    <link rel="icon" href="img/logo-el-fogon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="cuerpo-panel">
+    <header class="panel-top">
+        <div class="logo-caja">
+            <img src="img/logo-el-fogon.png" alt="Logo El Fogón" class="logo-img" />
+            <span class="logo-texto">El Fogón · Panel</span>
+        </div>
+        <div class="panel-usuario">
+            <span id="panel-bienvenida" data-testid="panel-bienvenida"></span>
+            <a href="index.html" class="btn btn-contorno btn-chico">Ver página</a>
+            <button class="btn btn-primario btn-chico" id="btn-salir" data-testid="btn-salir">Salir</button>
+        </div>
+    </header>
+
+    <nav class="panel-tabs" id="panel-tabs">
+        <button class="tab tab-activo" data-tab="reservas" data-testid="tab-reservas">Reservas</button>
+        <button class="tab solo-jefe" data-tab="platos" data-testid="tab-platos">Platos</button>
+        <button class="tab solo-jefe" data-tab="promos" data-testid="tab-promos">Promociones</button>
+        <button class="tab solo-jefe" data-tab="usuarios" data-testid="tab-usuarios">Usuarios</button>
+    </nav>
+
+    <main class="panel-main contenedor">
+        <!-- Reservas -->
+        <section class="panel-seccion" id="sec-reservas">
+            <h2>Reservas registradas</h2>
+            <div id="tabla-reservas" data-testid="tabla-reservas"></div>
+        </section>
+
+        <!-- Platos (solo jefe) -->
+        <section class="panel-seccion oculto" id="sec-platos">
+            <h2>Gestión de platos (CRUD)</h2>
+            <form id="form-plato" class="form-panel" data-testid="form-plato">
+                <input type="hidden" name="id" />
+                <input type="text" name="nombre" placeholder="Nombre del plato" required data-testid="plato-nombre" />
+                <input type="number" name="precio" placeholder="Precio (L)" step="0.01" required data-testid="plato-precio" />
+                <select name="categoria_id" required data-testid="plato-categoria"></select>
+                <input type="text" name="imagen" placeholder="Ruta de imagen (ej: /img/baleadas.jpg)" />
+                <input type="text" name="descripcion" placeholder="Descripción" />
+                <label class="check"><input type="checkbox" name="destacado" /> Destacado</label>
+                <button type="submit" class="btn btn-primario" data-testid="btn-guardar-plato">Guardar plato</button>
+                <button type="button" class="btn btn-contorno" id="btn-cancelar-plato">Limpiar</button>
+            </form>
+            <div id="tabla-platos" data-testid="tabla-platos"></div>
+        </section>
+
+        <!-- Promociones (solo jefe) -->
+        <section class="panel-seccion oculto" id="sec-promos">
+            <h2>Gestión de promociones (CRUD)</h2>
+            <form id="form-promo" class="form-panel" data-testid="form-promo">
+                <input type="hidden" name="id" />
+                <input type="text" name="nombre" placeholder="Nombre de la promo" required data-testid="promo-nombre" />
+                <input type="number" name="precio" placeholder="Precio (L)" step="0.01" required data-testid="promo-precio" />
+                <input type="number" name="precio_antes" placeholder="Precio antes (L)" step="0.01" />
+                <input type="text" name="descripcion" placeholder="Descripción" />
+                <label class="check"><input type="checkbox" name="activa" checked /> Activa</label>
+                <button type="submit" class="btn btn-primario" data-testid="btn-guardar-promo">Guardar promo</button>
+                <button type="button" class="btn btn-contorno" id="btn-cancelar-promo">Limpiar</button>
+            </form>
+            <div id="tabla-promos" data-testid="tabla-promos"></div>
+        </section>
+
+        <!-- Usuarios (solo jefe) -->
+        <section class="panel-seccion oculto" id="sec-usuarios">
+            <h2>Usuarios del sistema</h2>
+            <div id="tabla-usuarios" data-testid="tabla-usuarios"></div>
+        </section>
+    </main>
+
+    <div class="toast oculto" id="toast" data-testid="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+</html>

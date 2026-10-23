@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingresar — El Fogón</title>
+    <link rel="icon" href="img/logo-el-fogon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="cuerpo-login">
+    <div class="login-caja" data-testid="login-caja">
+        <a href="index.html" class="logo-caja login-logo">
+            <img src="img/logo-el-fogon.png" alt="Logo El Fogón" class="logo-img" />
+            <span class="logo-texto">El Fogón</span>
+        </a>
+        <h1 class="login-titulo">Acceso del personal</h1>
+        <p class="login-sub">Jefe · Mesero · Recepionista</p>
+
+        <form id="form-login" class="form-login">
+            <div class="campo">
+                <label>Usuario</label>
+                <input type="text" name="usuario" required data-testid="login-usuario" placeholder="jefe / mesero / recepcion" autocomplete="username" />
+            </div>
+            <div class="campo">
+                <label>Contraseña</label>
+                <input type="password" name="password" required data-testid="login-password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <p class="login-error oculto" id="login-error" data-testid="login-error"></p>
+            <button type="submit" class="btn btn-primario ancho-full" data-testid="btn-ingresar">Ingresar</button>
+        </form>
+
+        <div class="login-ayuda">
+            <p><strong>Usuarios de prueba:</strong></p>
+            <ul>
+                <li>jefe / jefe123 <span>(ve y edita todo)</span></li>
+                <li>mesero / mesero123 <span>(reservas y menú)</span></li>
+                <li>recepcion / recepcion123 <span>(reservas)</span></li>
+            </ul>
+        </div>
+        <a href="index.html" class="login-volver">← Volver a la página</a>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
